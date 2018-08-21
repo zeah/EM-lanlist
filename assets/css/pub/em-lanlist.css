@@ -1,0 +1,193 @@
+
+/*
+	HTML_DEFAULTS
+
+	LIST_CONTAINER
+	LÅN_CONTAINER
+	ROW
+	THUMBNAIL
+
+
+*/
+
+html {
+	font-size: 62.5%;
+}
+
+.emlan-star,
+.md-18 {
+	position: relative;
+	top: 7px;
+	left: 5px;
+	 -webkit-filter: drop-shadow( 0 0 1px #000 ); 
+            filter: drop-shadow( 0 0 1px #000 );
+	/*font-size: 1.8rem;*/
+	/*color: hsl(35, 100%, 60%);*/
+	/*text-shadow: 2px 0 20px #aaa;*/
+}
+
+.emlan-star-path {
+	fill: hsl(35, 100%, 60%);
+	/*stroke: hsl(35, 100%, 30%);*/
+	/*text-shadow: 2px 0 20px #aaa;*/
+}
+
+/* LIST_CONTAINER */
+.emlanlist-container {
+	opacity: 1 !important;
+	/*margin: 2rem;*/
+	list-style: none;
+	padding: 0;
+}
+
+/* LÅN_CONTAINER */
+.emlan-container {
+	padding: 1rem;
+	background-color: hsl(0, 0%, 96%);
+	box-shadow: 0 0 6px hsl(0, 0%, 50%);
+	text-align: center;
+	margin-bottom: 3rem;
+	font-size: 1.4rem;
+
+}
+
+/* ROW */
+.emlan-row {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: dashed 1px hsla(0, 0%, 30%, .1);
+}
+.emlan-row:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border: none;
+}
+
+.emlan-toprow {
+	padding-bottom: 2rem;
+	/*height: 6rem;*/
+}
+.emlan-middlerow {
+	/*justify-content: space-around;*/
+	justify-content: center;
+	line-height: 2.8;
+	font-size: 1.4rem;
+	background-color: hsla(0, 0%, 90%, .3);
+}
+
+.emlan-bottomrow {
+	padding-top: 1rem;
+}
+
+.emlan-row > div {
+	align-self: center;
+	padding: 0 1rem;
+}
+
+/* THUMBNAIL */
+.emlan-thumbnail-image {
+	width: 15rem;
+}
+
+/* standalone image (from shortcode [emlan-bilde])*/
+.emlan-bilde {
+	text-align: center;
+}
+
+.emlan-belop,
+.emlan-nedbetaling,
+.emlan-alder,
+.emlan-effrente {
+	font-weight: 700;
+}
+
+.emlan-belop:after,
+.emlan-nedbetaling:after,
+.emlan-alder:after,
+.emlan-effrente:after {
+	display: block;
+	font-weight: 400;
+}
+
+
+/* BELØP */
+.emlan-belop:after {
+	content: 'Lånebeløp';
+}
+
+/* NEDBETALING */
+.emlan-nedbetaling:after {
+	content: 'Nedbetaling';
+}
+
+/* ALDERGRENSE */
+.emlan-alder:after {
+	content: 'Aldersgrense';
+}
+
+/* EFFEKTIV_RENTE */
+.emlan-effrente:after {
+	content: 'Effektiv Rente';
+}
+
+/* LENKE */
+.emlan-lenke {
+	padding: 1rem 2rem;
+	border-radius: 5px;
+	font-size: 2rem;
+	text-decoration: none;
+	color: white;
+	white-space: nowrap;
+}
+
+.emlan-lenke-fatilbud {
+	position: relative;
+	top: 1rem;
+	background-image: linear-gradient(rgb(136, 221, 72) 0%, rgb(95, 177, 57) 100%);
+	border: solid 1px #60AE40;
+
+	font-family: Arial, sans-serif;
+	font-size: 2.2rem;
+	font-weight: 700;
+
+}
+
+.emlan-fatilbud:after {
+	display: block;
+	position: relative;
+	top: 2rem;
+	content: 'Annonselenke';
+}
+
+
+/* FÅ_TILBUD */
+.emlan-fatilbud {
+	width: 20rem;
+}
+
+/* shortcode [emlan-bestill] */
+.emlan-fatilbud-container {
+	margin: 1rem auto;
+	text-align: center;
+	padding-bottom: 3rem;
+}
+
+.emlan-fatilbud-container:after {
+	display: block;
+	position: relative;
+	top: 2rem;
+	content: 'Annonselenke';
+}
+
+.emlan-fatilbud-container > .emlan-lenke-fatilbud {
+	display: block;
+	padding: 1rem 0;
+}
+
+/* LES_MER */
+.emlan-lesmer {
+	width: 20rem;
+}
+
+
+

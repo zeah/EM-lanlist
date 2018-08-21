@@ -1,0 +1,149 @@
+html {
+	font-size: 62.5%;
+}
+
+.md-18 {
+	position: relative;
+	top: 3px;
+	font-size: 1.8rem;
+	color: hsl(120, 20%, 50%);
+}
+
+.emlanlist-container {
+	opacity: 1 !important;
+}
+
+.emlan-container {
+	background-color: hsl(0, 0%, 96%);
+	margin-bottom: 3rem;
+	font-size: 1.6rem;
+}
+
+@media screen and (orientation: landscape) {
+	.emlanlist-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.emlan-container {
+		width: 45%;
+		margin: 1rem auto;		
+	}
+}
+
+@media screen and (max-width: 1023px) and (min-width: 436px) {
+	.emlanlist-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.emlan-container {
+		width: 45%;
+		margin: 1rem auto;		
+	}
+}
+
+.emlan-container > div > div {
+	margin: 1rem auto;
+}
+
+.emlan-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.emlan-row:last-child {
+}
+
+.emlan-thumbnail {
+	width: 100%;
+	text-align: center;
+	height: 10rem;
+}
+
+.emlan-thumbnail-image {
+	width: 20rem;
+}
+
+.emlan-bilde {
+	width: 20rem;
+	margin: auto;
+	text-align: center;
+}
+
+.emlan-belop,
+.emlan-nedbetaling, 
+.emlan-alder,
+.emlan-effrente {
+	margin: auto;
+	width: 45%;
+	text-align: center;	
+}
+
+.emlan-lesmer,
+.emlan-fatilbud {
+	margin: auto;
+}
+
+.emlan-belop:before,
+.emlan-nedbetaling:before,
+.emlan-alder:before,
+.emlan-effrente:before {
+	display: block;
+	font-weight: bold;
+}
+
+
+/* BELØP */
+.emlan-belop:before {
+	content: 'Lånebeløp';
+}
+
+/* NEDBETALING */
+.emlan-nedbetaling:before {
+	content: 'Nedbetaling';
+}
+
+/* ALDERGRENSE */
+.emlan-alder:before {
+	content: 'Aldersgrense';
+}
+
+/* EFFEKTIV_RENTE */
+.emlan-effrente:before {
+	content: 'Effektiv Rente';
+}
+
+/* LENKE */
+.emlan-lenke {
+	padding: 1rem 2rem;
+	border-radius: 5px;
+	font-size: 2.4rem;
+	text-decoration: none;
+	color: white;
+	white-space: nowrap;
+}
+
+.emlan-lenke-fatilbud {
+	background-image: linear-gradient(hsl(120, 60%, 60%) 10%, hsl(120, 60%, 50%) 90%);
+	text-shadow: 1px 1px 1px hsl(120, 20%, 30%);
+}
+
+.emlan-fatilbud-container {
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.emlan-lenke-lesmer {
+	/*background-image: linear-gradient(hsl(0, 0%, 70%) 10%, hsl(0, 0%, 60%) 90%);*/
+	padding: 0.3rem 1rem;
+	/*font-size: 1.6rem;*/
+}
+
+.emlan-ekseffrente {
+	font-style: italic;
+	padding: 0 1rem;
+	text-align: center;
+}
