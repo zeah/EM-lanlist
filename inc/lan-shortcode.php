@@ -188,7 +188,7 @@ final class Lan_shortcode {
 	private function get_html($posts) {
 		$html = '<ul class="emlanlist-container">';
 
-		$star = '<svg class="emlan-star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path class="emlan-star-path" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/><path d="M0 0h24v24H0z" fill="none"/></svg>';
+		$star = '<svg class="emlan-star" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path class="emlan-star-path" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/><path d="M0 0h24v24H0z" fill="none"/></svg>';
 
 
 		foreach ($posts as $p) {
@@ -231,13 +231,13 @@ final class Lan_shortcode {
 			$html .= '<div class="emlan-row emlan-middlerow">';
 
 			// info 1
-			if ($meta['info01']) $html .= '<div class="emlanlist-info emlanlist-info-en">'.$star.$meta['info01'].'</div>';
+			if ($meta['info01']) $html .= '<div class="emlanlist-info emlanlist-info-en">'.$star.' '.$meta['info01'].'</div>';
 
 			// info 2
-			if ($meta['info02']) $html .= '<div class="emlanlist-info emlanlist-info-to">'.$star.$meta['info02'].'</div>';
+			if ($meta['info02']) $html .= '<div class="emlanlist-info emlanlist-info-to">'.$star.' '.$meta['info02'].'</div>';
 
 			// info 3
-			if ($meta['info03']) $html .= '<div class="emlanlist-info emlanlist-info-tre">'.$star.$meta['info03'].'</div>';
+			if ($meta['info03']) $html .= '<div class="emlanlist-info emlanlist-info-tre">'.$star.' '.$meta['info03'].'</div>';
 
 			$html .= '</div>';
 
