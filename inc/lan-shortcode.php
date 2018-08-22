@@ -231,13 +231,13 @@ final class Lan_shortcode {
 			$html .= '<div class="emlan-row emlan-middlerow">';
 
 			// info 1
-			if ($meta['info01']) $html .= $star.'<div class="emlanlist-info emlanlist-info-en">'.$meta['info01'].'</div>';
+			if ($meta['info01']) $html .= '<div class="emlanlist-info emlanlist-info-en">'.$star.$meta['info01'].'</div>';
 
 			// info 2
-			if ($meta['info02']) $html .= $star.'<div class="emlanlist-info emlanlist-info-to">'.$meta['info02'].'</div>';
+			if ($meta['info02']) $html .= '<div class="emlanlist-info emlanlist-info-to">'.$star.$meta['info02'].'</div>';
 
 			// info 3
-			if ($meta['info03']) $html .= $star.'<div class="emlanlist-info emlanlist-info-tre">'.$meta['info03'].'</div>';
+			if ($meta['info03']) $html .= '<div class="emlanlist-info emlanlist-info-tre">'.$star.$meta['info03'].'</div>';
 
 			$html .= '</div>';
 
