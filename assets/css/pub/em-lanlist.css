@@ -84,7 +84,7 @@ html {
 }
 
 /* standalone image (from shortcode [emlan-bilde])*/
-.emlan-bilde {
+.emlan-logo-ls {
 	text-align: center;
 }
 
@@ -169,13 +169,21 @@ html {
 .emlan-fatilbud-container:after {
 	display: block;
 	position: relative;
-	top: 2rem;
+	top: 1rem;
 	content: 'Annonselenke';
 }
 
 .emlan-fatilbud-container > .emlan-lenke-fatilbud {
 	display: block;
 	padding: 1rem 0;
+}
+
+.emlan-svg {
+	filter: drop-shadow(1px 1px 1px #333);
+}
+
+.emlan-thumb {
+	fill: #fff;
 }
 
 /* LES_MER */

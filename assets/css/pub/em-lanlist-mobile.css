@@ -77,7 +77,12 @@ html {
 	width: 20rem;
 }
 
-.emlan-bilde {
+/*.emlan-logo-ls > a {
+	display: block;
+}*/
+
+.emlan-image {
+	display: block;
 	width: 20rem;
 	margin: auto;
 	text-align: center;
@@ -139,8 +144,14 @@ html {
 }
 
 .emlan-lenke-fatilbud {
-	background-image: linear-gradient(hsl(120, 60%, 60%) 10%, hsl(120, 60%, 50%) 90%);
-	text-shadow: 1px 1px 1px hsl(120, 20%, 30%);
+	/*position: relative;*/
+	/*top: 1rem;*/
+	background-image: linear-gradient(rgb(136, 221, 72) 0%, rgb(95, 177, 57) 100%);
+	border: solid 1px #60AE40;
+
+	font-family: Arial, sans-serif;
+	font-size: 2.2rem;
+	font-weight: 700;
 }
 
 .emlan-fatilbud-container {
@@ -149,6 +160,21 @@ html {
 	left: 0;
 	right: 0;
 	text-align: center;
+}
+.emlan-fatilbud:after {
+	display: block;
+	/*position: relative;*/
+	/*top: 2rem;*/
+	content: 'Annonselenke';
+	background-color: #fff;
+}
+
+.emlan-svg {
+	filter: drop-shadow(1px 1px 1px #333);
+}
+
+.emlan-thumb {
+	fill: #fff;
 }
 
 .emlan-lenke-lesmer {
