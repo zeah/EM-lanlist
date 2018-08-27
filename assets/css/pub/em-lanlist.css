@@ -146,11 +146,13 @@ html {
 
 }
 
+.emlan-fatilbud-solo:after,
 .emlan-fatilbud:after {
 	display: block;
 	position: relative;
 	top: 2rem;
 	content: 'Annonselenke';
+	text-align: center;
 }
 
 
@@ -176,6 +178,14 @@ html {
 .emlan-fatilbud-container > .emlan-lenke-fatilbud {
 	display: block;
 	padding: 1rem 0;
+}
+
+.emlan-fatilbud-container-solo {
+	text-align: center;
+}
+
+.emlan-fatilbud-container-solo:after {
+	margin-bottom: 4rem;
 }
 
 .emlan-svg {
