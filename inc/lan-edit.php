@@ -70,7 +70,9 @@ final class Lan_edit {
 											<li><b>[lan-bilde name="xx"]</b>
 											<p>Name is required. Will show the loan\'s thumbnail.</p></li>
 											<li><b>[lan-bestill name="xx"]</b>
-											<p>Name is required. Will show the loan\'s button.</p></li>
+											<p>Name is required. Will show the loan\'s button.</p>
+											<br>[kredittkort-bestlil name="xx" source="test"] will append &source=test at the link.</p></li>
+											
 										</ul>
 										</li>
 										<li id="emlanlist-aldri"><h2>Aldri vis</h2>
