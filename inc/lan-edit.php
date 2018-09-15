@@ -39,9 +39,9 @@ final class Lan_edit {
 	 * @param [array] $data [array passing through theme filter]
 	 */
 	public function add_doc($data) {
-		$data['emlanlist']['title'] = '<h1 id="emlanlist">Lånlist Sverige (Plugin)</h1>';
+		$data['emlanlist']['title'] = '<h1 id="emlanlist">Lånlist (Plugin)</h1>';
 
-		$data['emlanlist']['index'] = '<li><h2><a href="#emlanlist">Lånlist Sverige (Plugin)</a></h2>
+		$data['emlanlist']['index'] = '<li><h2><a href="#emlanlist">Lånlist (Plugin)</a></h2>
 											<ul>
 												<li><a href="#emlanlist-shortcode">Shortcode</a></li>
 												<li><a href="#emlanlist-aldri">Aldri vis</a></li>
@@ -68,9 +68,10 @@ final class Lan_edit {
 											</li>
 											</li>
 											<li><b>[lan-bilde name="xx"]</b>
-											<p>Name is required. Will show the loan\'s thumbnail.</p></li>
+											<p>Name is required. Will show the loan\'s thumbnail with a link.
+											<br>[kredittkort-bestlil name="xx" source="test"] will append &source=test at the link.</p></li>
 											<li><b>[lan-bestill name="xx"]</b>
-											<p>Name is required. Will show the loan\'s button.</p>
+											<p>Name is required. Will show the loan\'s button.
 											<br>[kredittkort-bestlil name="xx" source="test"] will append &source=test at the link.</p></li>
 											
 										</ul>
