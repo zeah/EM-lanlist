@@ -1,6 +1,6 @@
 (() => {
 
-	// console.log(emlanlist_data);
+	console.log(emlanlist_data);
 
 	let newtype = '';
 

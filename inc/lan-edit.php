@@ -193,6 +193,7 @@ final class Lan_edit {
 				array_push($taxes, $t->slug);
 
 		$json = [
+			'meta' => isset($meta[0]) ? $meta[0] : '',
 			'meta' => isset($meta[0]) ? $this->sanitize($meta[0]) : '',
 			'emlanlist_sort' => isset($sort[0]) ? floatval($sort[0]) : '',
 			'tax' => $taxes
@@ -202,7 +203,6 @@ final class Lan_edit {
 		foreach($ameta as $key => $value)
 			if (strpos($key, 'emlanlist_sort_') !== false && isset($value[0])) $json[$key] = esc_html($value[0]);
 
-		// wp_die('<xmp>'.print_r($json, true).'</xmp>');
 		wp_localize_script('em-lanlist-admin', 'emlanlist_data', json_decode(json_encode($json), true));
 		echo '<div class="emlanlist-meta-container"></div>';
 	}
@@ -232,6 +232,8 @@ final class Lan_edit {
 	 * wp action when saving
 	 */
 	public function save($post_id) {
+		// wp_die('<xmp>'.print_r($_POST, true).'</xmp>');
+		
 		// post type is emlanlist
 		if (!get_post_type($post_id) == 'emlanlist') return;
 
@@ -337,8 +339,13 @@ final class Lan_edit {
 		if (!is_array($data)) return wp_kses_post($data);
 
 		$d = [];
-		foreach($data as $key => $value)
-			$d[$key] = $this->sanitize($value);
+		foreach($data as $key => $value) {
+			switch ($key) {
+				case 'bestill':
+				case 'redmore': $d[$key] = sanitize_text_field($value); break;
+				default: $this->sanitize($value); break;
+			}
+		}
 
 		return $d;
 	}
