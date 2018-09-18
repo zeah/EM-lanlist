@@ -41,6 +41,8 @@ final class Lan_shortcode {
 
 
 		add_filter('search_first', array($this, 'add_serp'));
+		// add_action('wp_footer', array($this, 'add_pixel_footer'));
+
 	}
 
 
@@ -134,35 +136,21 @@ final class Lan_shortcode {
 				case 'right': $float = ' style="float: right; margin-left: 3rem;"'; break;
 			}
 
+		$html = '';
+
 		if ($meta['pixel']) {
 			if ($atts['source']) $meta['pixel'] = $this->add_source($meta['pixel'], $atts['source']); 
-			$this->add_pixel($meta['pixel']);
+			$html .= $this->add_pixel($meta['pixel']);
 		}
 		if ($atts['source']) $meta['bestill'] = $this->add_source($meta['bestill'], $atts['source']);
-		// if  ($atts['source']) {
-		// 	if (preg_match('/(?:(?!\?|&))(?:source=.*?)(?:(&|$))/', $meta['bestill'], $matches))
-		// 		$meta['bestill'] = str_replace($matches[0], '', $meta['bestill']); 
-
-		// 	$meta['bestill'] = preg_replace('/\?$/', '', $meta['bestill']);
- 
-		// 	if (strpos($meta['bestill'], '?') !== false) $meta['bestill'] .= '&source=' . $atts['source'];
-		// 	else $meta['bestill'] .= '?source=' . $atts['source'];
 
 
-		// 	if (preg_match('/(?:(?!\?|&))(?:source=.*?)(?:(&|$))/', $meta['pixel'], $matches))
-		// 		$meta['pixel'] = str_replace($matches[0], '', $meta['pixel']); 
-
-		// 	$meta['pixel'] = preg_replace('/\?$/', '', $meta['pixel']);
- 
-		// 	if (strpos($meta['pixel'], '?') !== false) $meta['pixel'] .= '&source=' . $atts['source'];
-		// 	else $meta['pixel'] .= '?source=' . $atts['source'];
-		// }
-		
-		// if ($meta['pixel']) $this->add_pixel($meta['pixel']);
 		// image with anchor
-		if ($meta['bestill']) return '<div class="emlan-logo-ls"'.($float ? $float : '').'><a target="_blank" rel=noopener href="'.esc_url($meta['bestill']).'"><img class="emlan-image" alt="'.esc_attr($post[0]->post_title).'" src="'.esc_url(get_the_post_thumbnail_url($post[0], 'full')).'"></a></div>';
+		if ($meta['bestill']) $html .= '<div class="emlan-logo-ls"'.($float ? $float : '').'><a target="_blank" rel=noopener href="'.esc_url($meta['bestill']).'"><img class="emlan-image" alt="'.esc_attr($post[0]->post_title).'" src="'.esc_url(get_the_post_thumbnail_url($post[0], 'full')).'"></a></div>';
 		// no anchor
-		return '<div class="emlanlist-logo-ls"'.($float ? $float : '').'><img alt="'.esc_attr($post[0]->post_title).'" src="'.esc_url(get_the_post_thumbnail_url($post[0], 'full')).'"></div>';
+		else $html .= '<div class="emlanlist-logo-ls"'.($float ? $float : '').'><img alt="'.esc_attr($post[0]->post_title).'" src="'.esc_url(get_the_post_thumbnail_url($post[0], 'full')).'"></div>';
+	
+		return $html;
 	}
 
 
@@ -198,25 +186,20 @@ final class Lan_shortcode {
 				case 'right': $float = ' style="float: right; margin-left: 3rem;"'; break;
 			}
 
+
+		$html = '';
+
 		if ($meta['pixel']) {
 			if ($atts['source']) $meta['pixel'] = $this->add_source($meta['pixel'], $atts['source']); 
-			$this->add_pixel($meta['pixel']);
+			$html .= $this->add_pixel($meta['pixel']);
 		}
 		// adding/overwriting source to query string in url
 		if ($atts['source']) $meta['bestill'] = $this->add_source($meta['bestill'], $atts['source']);
 
-		// if  ($atts['source']) {
-		// 	if (preg_match('/(?:(?!\?|&))(?:source=.*?)(?:(&|$))/', $meta['bestill'], $matches))
-		// 		$meta['bestill'] = str_replace($matches[0], '', $meta['bestill']); 
-
-		// 	$meta['bestill'] = preg_replace('/\?$/', '', $meta['bestill']);
- 
-		// 	if (strpos($meta['bestill'], '?') !== false) $meta['bestill'] .= '&source=' . $atts['source'];
-		// 	else $meta['bestill'] .= '?source=' . $atts['source'];
-		// }
 
 		add_action('wp_enqueue_scripts', array($this, 'add_css'));
-		return '<div class="emlan-fatilbud-solo emlan-fatilbud-container-solo"'.($float ? $float : '').'><a target="_blank" rel="noopener" class="emlan-lenke-fatilbud emlan-lenke" href="'.esc_url($meta['bestill']).'"><svg class="emlan-svg" version="1.1" x="0px" y="0px" width="26px" height="20px" viewBox="0 0 26 20" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="none" d="M0,0h24v24H0V0z"/><path class="emlan-thumb" d="M1,21h4V9H1V21z M23,10c0-1.1-0.9-2-2-2h-6.31l0.95-4.57l0.03-0.32c0-0.41-0.17-0.79-0.44-1.06L14.17,1L7.59,7.59C7.22,7.95,7,8.45,7,9v10c0,1.1,0.9,2,2,2h9c0.83,0,1.54-0.5,1.84-1.22l3.02-7.05C22.95,12.5,23,12.26,23,12V10z"/></svg> Søk her!</a></div>';
+		$html .= '<div class="emlan-fatilbud-solo emlan-fatilbud-container-solo"'.($float ? $float : '').'><a target="_blank" rel="noopener" class="emlan-lenke-fatilbud emlan-lenke" href="'.esc_url($meta['bestill']).'"><svg class="emlan-svg" version="1.1" x="0px" y="0px" width="26px" height="20px" viewBox="0 0 26 20" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="none" d="M0,0h24v24H0V0z"/><path class="emlan-thumb" d="M1,21h4V9H1V21z M23,10c0-1.1-0.9-2-2-2h-6.31l0.95-4.57l0.03-0.32c0-0.41-0.17-0.79-0.44-1.06L14.17,1L7.59,7.59C7.22,7.95,7,8.45,7,9v10c0,1.1,0.9,2,2,2h9c0.83,0,1.54-0.5,1.84-1.22l3.02-7.05C22.95,12.5,23,12.26,23,12V10z"/></svg> Søk her!</a></div>';
+		return $html;
 	}
 
 
@@ -250,7 +233,7 @@ final class Lan_shortcode {
 
 			if ($meta['pixel']) {
 				if ($source) $meta['pixel'] = $this->add_source($meta['pixel'], $source);
-				$this->add_pixel($meta['pixel']);
+				$html .= $this->add_pixel($meta['pixel']);
 			}
 			// sanitize meta
 			$meta = $this->esc_kses($meta);
@@ -314,14 +297,16 @@ final class Lan_shortcode {
 	}
 
 	private function add_pixel($pixel) {
+		if ($this->$pixels[$pixel]) return '';
+
 		$this->$pixels[$pixel] = true;
-		add_action('wp_footer', array($this, 'add_pixel_footer'), 1);
+		return '<img width=0 height=0 src="'.esc_url($pixel).'" style="position:absolute">';
 	}
 
-	public function add_pixel_footer() {
-		foreach ($this->$pixels as $key => $value)
-			echo '<img width=0 height=0 src="'.esc_url($key).'" style="position:absolute">';
-	}
+	// public function add_pixel_footer() {
+	// 	foreach ($this->$pixels as $key => $value)
+	// 		echo '<img width=0 height=0 src="'.esc_url($key).'" style="position:absolute">';
+	// }
 
 
 	/**
