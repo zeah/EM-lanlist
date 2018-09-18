@@ -173,7 +173,7 @@ final class Lan_edit {
 		
 		/* adding admin css and js */
 		wp_enqueue_style('em-lanlist-admin-style', LANLIST_PLUGIN_URL . 'assets/css/admin/em-lanlist.css', array(), '1.0.1');
-		wp_enqueue_script('em-lanlist-admin', LANLIST_PLUGIN_URL . 'assets/js/admin/em-lanlist.js', array(), '1.0.1', true);
+		wp_enqueue_script('em-lanlist-admin', LANLIST_PLUGIN_URL . 'assets/js/admin/em-lanlist.js', array(), '1.0.2', true);
 	}
 
 
