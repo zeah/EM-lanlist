@@ -297,9 +297,10 @@ final class Lan_shortcode {
 	}
 
 	private function add_pixel($pixel) {
-		if ($this->$pixels[$pixel]) return '';
+		if ($this->pixels[$pixel]) return '';
 
-		$this->$pixels[$pixel] = true;
+		$this->pixels[$pixel] = true;
+
 		return '<img width=0 height=0 src="'.esc_url($pixel).'" style="position:absolute">';
 	}
 
@@ -343,7 +344,7 @@ final class Lan_shortcode {
 		// removing current source
 		if (preg_match('/(?:(?!\?|&))(?:source=.*?)(?:(&|$))/', $meta, $matches))
 			$meta = str_replace($matches[0], '', $meta); 
-		$meta = preg_replace('/\?$/', '', $meta);
+		$meta = preg_replace('/(\?|&)$/', '', $meta);
 
 		// adding source
 		if (strpos($meta, '?') !== false) $meta .= '&source=' . $source;
