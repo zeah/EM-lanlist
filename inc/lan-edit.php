@@ -204,6 +204,8 @@ final class Lan_edit {
 		foreach($ameta as $key => $value)
 			if (strpos($key, 'emlanlist_sort_') !== false && isset($value[0])) $json[$key] = esc_html($value[0]);
 
+		// wp_die('<xmp>'.print_r($_POST, true).'</xmp>');
+
 		wp_localize_script('em-lanlist-admin', 'emlanlist_data', json_decode(json_encode($json), true));
 		echo '<div class="emlanlist-meta-container"></div>';
 	}
@@ -345,7 +347,7 @@ final class Lan_edit {
 				case 'bestill':
 				case 'pixel':
 				case 'readmore': $d[$key] = sanitize_text_field($value); break;
-				default: $this->sanitize($value); break;
+				default: $d[$key] = $this->sanitize($value); break;
 			}
 		}
 

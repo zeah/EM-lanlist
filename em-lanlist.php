@@ -2,7 +2,7 @@
 /*
 Plugin Name: EM Lånlist 
 Description: liste over Lån
-Version: 1.0.3
+Version: 1.0.5
 GitHub Plugin URI: zeah/EM-lanlist
 */
 
