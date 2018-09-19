@@ -168,8 +168,8 @@ final class Lan_shortcode {
 			if ($meta['qstring']) $meta['bestill'] = $this->add_query_string($meta['bestill'], $atts['source'], $atts['page']);
 
 			// image with anchor
-			$meta['bestill'] = $this->add_query_string($meta['bestill'], $atts['source'], $atts['page']);
-			if ($meta['pixel']) $html .= $this->add_pixel($this->add_query_string($meta['pixel'], $atts['source'], $atts['page']));
+			// $meta['bestill'] = $this->add_query_string($meta['bestill'], $atts['source'], $atts['page']);
+			// if ($meta['pixel']) $html .= $this->add_pixel($this->add_query_string($meta['pixel'], $atts['source'], $atts['page']));
 	
 			$html .= '<div class="emlan-logo-ls"'.($float ? $float : '').'><a target="_blank" rel=noopener href="'.esc_url($meta['bestill']).'"><img class="emlan-image" alt="'.esc_attr($post[0]->post_title).'" src="'.esc_url(get_the_post_thumbnail_url($post[0], 'full')).'"></a></div>';
 			return $html;
