@@ -41,6 +41,10 @@
 	font-size: 16px;
 }
 
+.emlanlist-input-container input[type=checkbox]{
+	width: auto;
+}
+
 /* overview window */
 
 #myTable2 {

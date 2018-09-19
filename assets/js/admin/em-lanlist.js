@@ -38,16 +38,20 @@
 		if (!o.type) input.setAttribute('type', 'text');
 		else input.setAttribute('type', o.type);
 
-		if (!o.sort) input.setAttribute('value', (emlanlist_data.meta[o.name] == undefined) ? '' : emlanlist_data.meta[o.name]);
-		else {
-			let sort = emlanlist_data.emlanlist_sort;
+		if (o.type != 'checkbox') {
+			if (!o.sort) input.setAttribute('value', (emlanlist_data.meta[o.name] == undefined) ? '' : emlanlist_data.meta[o.name]);
+			else {
+				let sort = emlanlist_data.emlanlist_sort;
 
-			if (o.sort != 'default') sort = emlanlist_data['emlanlist_sort_'+o.sort];
+				if (o.sort != 'default') sort = emlanlist_data['emlanlist_sort_'+o.sort];
 
-			if (sort == undefined) sort = emlanlist_data.emlanlist_sort;
+				if (sort == undefined) sort = emlanlist_data.emlanlist_sort;
 
-			input.setAttribute('value', sort);
+				input.setAttribute('value', sort);
+			}
 		}
+		else if (emlanlist_data.meta[o.name]) input.setAttribute('checked', '');
+		
 
 		if (o.step) input.setAttribute('step', parseFloat(o.step));
 		if (o.max) input.setAttribute('max', parseFloat(o.step));
@@ -126,6 +130,7 @@
 
 	container.appendChild(newinput({name: 'bestill', title: 'Bestill Link'}));
 	container.appendChild(newinput({name: 'pixel', title: 'Tracking Pixel URL'}));
+	container.appendChild(newinput({name: 'qstring', type: 'checkbox', title: 'Add query'}));
 	// container.appendChild(newinput({name: 'bestill_text', title: 'Bestill Text (under bestillknapp)'}));
 
 	let info_container = newdiv({class: 'emlanlist-info-container'});

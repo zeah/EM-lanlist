@@ -172,8 +172,8 @@ final class Lan_edit {
 		);
 		
 		/* adding admin css and js */
-		wp_enqueue_style('em-lanlist-admin-style', LANLIST_PLUGIN_URL . 'assets/css/admin/em-lanlist.css', array(), '1.0.1');
-		wp_enqueue_script('em-lanlist-admin', LANLIST_PLUGIN_URL . 'assets/js/admin/em-lanlist.js', array(), '1.0.2', true);
+		wp_enqueue_style('em-lanlist-admin-style', LANLIST_PLUGIN_URL . 'assets/css/admin/em-lanlist.css', array(), '1.0.2');
+		wp_enqueue_script('em-lanlist-admin', LANLIST_PLUGIN_URL . 'assets/js/admin/em-lanlist.js', array(), '1.0.3', true);
 	}
 
 
@@ -287,6 +287,7 @@ final class Lan_edit {
 		// }
 
 		// data is sent, then sanitized and saved
+		// if (isset($_POST['emlanlist_data'])) update_post_meta($post_id, 'emlanlist_data', $_POST['emlanlist_data']);
 		if (isset($_POST['emlanlist_data'])) update_post_meta($post_id, 'emlanlist_data', $this->sanitize($_POST['emlanlist_data']));
 		if (isset($_POST['emlanlist_sort'])) update_post_meta($post_id, 'emlanlist_sort', floatval($_POST['emlanlist_sort']));
 
