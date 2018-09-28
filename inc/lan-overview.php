@@ -21,7 +21,7 @@ final class Lan_overview {
 	}
 
 	public function add_page() {
-		wp_enqueue_style('em-lanlist-se-admin-style', LANLIST_SE_PLUGIN_URL . 'assets/css/admin/em-lanlist-se.css', array(), '1.0.1');
+		wp_enqueue_style('em-lanlist-admin-style', LANLIST_PLUGIN_URL . 'assets/css/admin/em-lanlist.css', array(), '1.0.1');
 
 		$args = [
 			'post_type' 		=> get_post_types(['public' => true]),
